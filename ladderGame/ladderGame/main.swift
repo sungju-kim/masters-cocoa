@@ -7,5 +7,17 @@
 
 import Foundation
 
-print("Hello, World!")
 
+
+struct Ladder {
+    func playLadder(player : Int) {
+        if player < 2 || player > 8 {
+            return
+        }
+        print(player)
+    }
+}
+var playerNum = Int(readLine() ?? "0")
+var ladder  = Ladder()
+
+ladder.playLadder(player: playerNum ?? 0 )
