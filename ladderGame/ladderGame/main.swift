@@ -10,18 +10,24 @@ import Foundation
 
 
 struct Ladder {
-    func playLadder(player : Int) {
+    func playLadder(player : Int, length : Int) {
         if player < 2 || player > 8 {
             return
         }
-        printLadder(player: player)
+        printLadder(player: player, length: length)
     }
-    func printLadder(player : Int){
-        let row = player
-        var ladderArr = Array(repeating: Array(repeating: "|", count: row), count: 5)
-        for i in 0...4 {
-            if i != 4 {
-                for j in 0...row-1{
+    func buildLadder(player : Int, length : Int) -> Array<Array<String>> {
+        let ladderArr = Array(repeating: Array(repeating: "|", count: player), count: length)
+        
+        return ladderArr
+    }
+    func printLadder(player : Int, length : Int){
+        let row = player-1
+        let resultLine = length-1
+        let ladderArr = buildLadder(player: player, length: length)
+        for i in 0...resultLine {
+            if i != resultLine {
+                for j in 0...row{
                     let orNot = Int.random(in: 0...1)
                     let randomNum1 = randomNum(player: player, orNot: orNot)
                     let randomNum2 = randomNum(player: player, orNot: orNot)
@@ -33,14 +39,16 @@ struct Ladder {
                 }
                 print("")
             }else{
-                let winning = Int.random(in: 0...player-1)
-                for j in 0...row-1{
+                let winning = Int.random(in: 0...row)
+                for j in 0...row{
                     if j == winning {
                         print("o", terminator: " ")
                     }else{
                         print("x", terminator: " ")
                     }
                 }
+                print("")
+                print(" ")
             }
         }
     }
@@ -61,5 +69,8 @@ struct Ladder {
 }
 print("인원수를 입력하세요 ( 2 ~ 8 ) ex) 5")
 var playerNum = Int(readLine() ?? "0")
+print("")
+print("사다리 길이를 입력하세요")
+var ladderLength = Int(readLine() ?? "4")! + 1
 var ladder  = Ladder()
-ladder.playLadder(player: playerNum ?? 0 )
+ladder.playLadder(player: playerNum ?? 0, length: ladderLength )
