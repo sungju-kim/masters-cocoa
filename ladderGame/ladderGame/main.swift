@@ -75,3 +75,21 @@ print("사다리 길이를 입력하세요 (4 ~ 10) ")
 var ladderLength = Int(readLine() ?? "4")! + 1
 var ladder  = Ladder()
 ladder.playLadder(player: playerNum ?? 0, length: ladderLength )
+
+//   인원수를 입력하세요 ( 2 ~ 8 ) ex) 5
+//   4
+//
+//   사다리 길이를 입력하세요 (4 ~ 10)
+//   10
+//   |-|-|-|
+//   |-|-| |
+//   |-| | |
+//   |-| |-|
+//   |-|-|-|
+//   | |-|-|
+//   | |-| |
+//   |-| | |
+//   | |-| |
+//   | |-|-|
+//   x o x x
+//
