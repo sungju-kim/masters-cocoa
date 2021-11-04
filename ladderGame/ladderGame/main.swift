@@ -11,7 +11,8 @@ import Foundation
 
 struct Ladder {
     func playLadder(player : Int, length : Int) {
-        if player < 2 || player > 8 {
+        let ladder = length-1
+        if (player < 2 || player > 8) || (ladder < 4 || ladder > 10) {
             return
         }
         printLadder(player: player, length: length)
@@ -70,7 +71,7 @@ struct Ladder {
 print("인원수를 입력하세요 ( 2 ~ 8 ) ex) 5")
 var playerNum = Int(readLine() ?? "0")
 print("")
-print("사다리 길이를 입력하세요")
+print("사다리 길이를 입력하세요 (4 ~ 10) ")
 var ladderLength = Int(readLine() ?? "4")! + 1
 var ladder  = Ladder()
 ladder.playLadder(player: playerNum ?? 0, length: ladderLength )
