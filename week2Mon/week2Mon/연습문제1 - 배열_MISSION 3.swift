@@ -18,14 +18,26 @@ struct MagicSquare {
         magicSquare[columnNum][rowNum] = count
         count += 1
         while count <= totalCount{
-            if magicSquare[columnNum + 1 ][rowNum + 1 ] == 0{
-                columnNum += 1
-                rowNum += 1
-                magicSquare[columnNum][rowNum] = count
-                count += 1
-            }else if magicSquare[columnNum][rowNum] != 0 {
-                columnNum -= 1
-                magicSquare[columnNum][rowNum] = count
+            if columnNum + 1 < row - 1 {
+                if magicSquare[columnNum + 1 ][rowNum + 1 ] == 0{
+                    columnNum += 1
+                    rowNum += 1
+                    magicSquare[columnNum][rowNum] = count
+                    count += 1
+                }else if magicSquare[columnNum][rowNum] != 0 {
+                    columnNum -= 1
+                    magicSquare[columnNum][rowNum] = count
+                }
+            }else{
+                if magicSquare[(columnNum + 1)%row - 1][(rowNum + 1) % row - 1 ] == 0{
+                    columnNum = (columnNum + 1)%row - 1
+                    rowNum = (rowNum + 1) % row - 1
+                    magicSquare[columnNum][rowNum] = count
+                    count += 1
+                }else if magicSquare[(columnNum + 1)%row - 1][(rowNum + 1) % row - 1 ] != 0 {
+                    columnNum -= 1
+                    magicSquare[columnNum][rowNum] = count
+                }
             }
         }
         return magicSquare
@@ -40,6 +52,4 @@ struct MagicSquare {
         }
     }
 }
-
-
 
