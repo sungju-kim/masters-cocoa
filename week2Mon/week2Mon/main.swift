@@ -34,4 +34,8 @@ let idCheck = IdCheck()
 
 let checkPassword = Password()
 
-checkPassword.printResult()
+//checkPassword.printResult()
+
+let checkIdNum = CheckIdNum()
+
+checkIdNum.printResult()
