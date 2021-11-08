@@ -18,4 +18,8 @@ let myArray = ArrayPractice()
 
 var boolArray = BoolArray()
 
-boolArray.printArray(bArray: boolArray.buildArray(), newChar: "$") // 연습문제 1 - 배열 _ MISSION 2
+//boolArray.printArray(bArray: boolArray.buildArray(), newChar: "$") // 연습문제 1 - 배열 _ MISSION 2
+
+var magicSquare = MagicSquare()
+
+//magicSquare.printMagieSquare(array: magicSquare.makeMagieSquare(row: 5), row: 5)
