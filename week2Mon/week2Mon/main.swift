@@ -23,3 +23,10 @@ var boolArray = BoolArray()
 var magicSquare = MagicSquare()
 
 //magicSquare.printMagieSquare(array: magicSquare.makeMagieSquare(row: 5), row: 5)
+
+
+
+let input = readLine()!
+var idCheck = IDValidator(id: input)
+
+//print(idCheck)
