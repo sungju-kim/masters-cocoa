@@ -7,16 +7,25 @@
 
 import Foundation
 
-
-func IDValidator(id : String) -> Bool {
-    let regex = "^(?=.*[A-Za-z-0-9])(?=.*[0-9]).{8,24}" // 5자리 ~ 24자리 영어+숫자+특수문자
-
-    let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-    let isValid = predicate.evaluate(with: input)
-    if isValid{
-        return true
-    } else {
-        return false
+struct IdCheck {
+    func IDValidator(idInput : String) -> Bool {
+        let regex = "^(?=.*[A-Za-z-0-9])(?=.*[0-9]).{8,24}" // 5자리 ~ 24자리 영어+숫자+특수문자
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        let isValid = predicate.evaluate(with: idInput)
+        if isValid{
+            return true
+        } else {
+            return false
+        }
     }
+    func printId(idInput : String) {
+        if IDValidator(idInput: idInput) == true {
+            print("true")
+        }else {
+            print(false)
+        }
+        
+    }
+    
 }
 
