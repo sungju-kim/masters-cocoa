@@ -26,12 +26,12 @@ var magicSquare = MagicSquare()
 
 
 
-let idInput = readLine()!
+
 let idCheck = IdCheck()
 
-idCheck.printId(idInput: idInput)
+//idCheck.printId(idInput: idInput)
 
-let passwordInput = readLine()!
+
 let checkPassword = Password()
 
-checkPassword.passwordValidator(password: passwordInput)
+checkPassword.printResult()

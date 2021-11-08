@@ -18,7 +18,8 @@ struct IdCheck {
             return false
         }
     }
-    func printId(idInput : String) {
+    func printId() {
+        let idInput = readLine()!
         if IDValidator(idInput: idInput) == true {
             print("true")
         }else {
