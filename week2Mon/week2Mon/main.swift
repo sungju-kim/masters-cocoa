@@ -38,4 +38,8 @@ let checkPassword = Password()
 
 let checkIdNum = CheckIdNum()
 
-checkIdNum.printResult()
+//checkIdNum.printResult()
+
+let antPuzzle = AntPuzzle()
+
+antPuzzle.buildArray(line: 20)
