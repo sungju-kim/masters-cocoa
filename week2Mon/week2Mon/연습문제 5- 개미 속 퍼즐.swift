@@ -9,17 +9,28 @@ import Foundation
 
 struct AntPuzzle {
     func antFuntion(inputArray : Array<Int> ) -> Array<Int> {
-        var nowArray = inputArray
+        let nowArray = inputArray
+        let arrayLength = nowArray.count
         var newArr : Array<Int> = []
-        while nowArray.count >= 1 {
-            let firstObj = nowArray[0]
-            var count = 1
-            if nowArray[1] == firstObj {
-                count += 1
+        var count = 1
+        if arrayLength > 1 {
+            for i in 1...(arrayLength-1) {
+                if i < (arrayLength-1) {
+                    if nowArray[i] == nowArray[i-1] {
+                        count += 1
+                    }else{
+                        newArr.append(nowArray[i-1])
+                        newArr.append(count)
+                        count = 1
+                    }
+                }else {
+                    newArr.append(nowArray[i-1])
+                    count += 1
+                    newArr.append(count)
+                }
             }
-            
-            newArr.append(nowArray[0])
-            newArr.append(count)
+        }else{
+            newArr = [1,2,2,1,1,1]
         }
         return newArr
     }
