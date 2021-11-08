@@ -8,48 +8,48 @@
 import Foundation
 
 struct MagicSquare {
-    func makeMagieSquare(row:Int) ->Array<Array<Int>> {
-        var magicSquare = Array(repeating: Array(repeating: 0, count: row) , count: row)
-        let totalCount = row * row
-        var count = 1
-        let length = row-1
-        var columnNum = Int.random(in: 0...length)
-        var rowNum  = Int.random(in: 0...length)
-        magicSquare[columnNum][rowNum] = count
-        count += 1
-        while count <= totalCount{
-            if columnNum + 1 < row - 1 {
-                if magicSquare[columnNum + 1 ][rowNum + 1 ] == 0{
-                    columnNum += 1
-                    rowNum += 1
-                    magicSquare[columnNum][rowNum] = count
-                    count += 1
-                }else if magicSquare[columnNum][rowNum] != 0 {
-                    columnNum -= 1
-                    magicSquare[columnNum][rowNum] = count
-                }
+    func makeMagieSquare(row:Int) -> Array<Array<Int>> {
+        let num = row
+        var magicSquare = Array(repeating: Array(repeating: 0, count: num), count: num)
+        var magicRow = 0
+        var magicColumn = Int(num/2)
+        magicSquare[magicRow][magicColumn]=1
+        var originalRow = 0
+        var originalColumn = 0
+        
+        for i in 2...num*num{
+            originalRow = magicRow
+            originalColumn = magicColumn
+            
+            magicRow -= 1
+            magicColumn += 1
+            
+            if magicRow < 0 {
+                magicRow = num - 1
+            }
+            if magicColumn > num-1 {
+                magicColumn = 0
+            }
+            if magicSquare[magicRow][magicColumn] == 0 {
+                magicSquare[magicRow][magicColumn] = i
             }else{
-                if magicSquare[(columnNum + 1)%row - 1][(rowNum + 1) % row - 1 ] == 0{
-                    columnNum = (columnNum + 1)%row - 1
-                    rowNum = (rowNum + 1) % row - 1
-                    magicSquare[columnNum][rowNum] = count
-                    count += 1
-                }else if magicSquare[(columnNum + 1)%row - 1][(rowNum + 1) % row - 1 ] != 0 {
-                    columnNum -= 1
-                    magicSquare[columnNum][rowNum] = count
-                }
+                magicRow = originalRow+1
+                magicColumn = originalColumn
+                magicSquare[magicRow][magicColumn] = i
             }
         }
         return magicSquare
     }
-
+    
     func printMagieSquare(array : Array<Array<Int>>, row : Int) {
         let length = row-1
         for i in 0...length {
             for j in 0...length {
-                print(array[i][j])
+                print(array[i][j], terminator: " ")
             }
+            print("")
         }
     }
 }
+
 

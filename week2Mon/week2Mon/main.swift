@@ -22,7 +22,7 @@ var boolArray = BoolArray()
 
 var magicSquare = MagicSquare()
 
-magicSquare.printMagieSquare(array: magicSquare.makeMagieSquare(row: 3),row: 3)
+magicSquare.printMagieSquare(array: magicSquare.makeMagieSquare(row: 5 ),row: 5)
 
 
 
