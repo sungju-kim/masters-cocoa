@@ -9,7 +9,7 @@ import Foundation
 
 struct IdCheck {
     func IDValidator(idInput : String) -> Bool {
-        let regex = "^(?=.*[A-Za-z-0-9])(?=.*[0-9]).{5,24}" // 5자리 ~ 24자리 영어+숫자+특수문자
+        let regex = "^(?=.*[A-Za-z0-9])(?=.*[0-9]).{5,24}" // 5자리 ~ 24자리 영어+숫자+특수문자
         let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
         let isValid = predicate.evaluate(with: idInput)
         if isValid{
@@ -25,7 +25,7 @@ struct IdCheck {
         }else {
             print(false)
         }
-        
     }
 }
 
+let idCheck = IdCheck()

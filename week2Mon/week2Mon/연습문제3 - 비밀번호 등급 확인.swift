@@ -42,3 +42,5 @@ struct Password {
         print(passwordValidator(password: passwordInput))
     }
 }
+
+let checkPassword = Password()

@@ -3,22 +3,4 @@
    uuid = "E952B11C-3ED0-4AA2-AADB-9FEF67F9E0D8"
    type = "1"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A7F0AE34-34B1-4FD9-B232-5037B5610C91"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "week2Mon/&#x110b;&#x1167;&#x11ab;&#x1109;&#x1173;&#x11b8;&#x1106;&#x116e;&#x11ab;&#x110c;&#x1166;1 - &#x1107;&#x1162;&#x110b;&#x1167;&#x11af;_MISSION 3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "makeMagieSquare(row:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>

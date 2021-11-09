@@ -27,4 +27,5 @@ struct ArrayPractice {
     }
 }
 
+let myArray = ArrayPractice()
 

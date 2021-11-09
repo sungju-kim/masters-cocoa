@@ -52,4 +52,5 @@ struct MagicSquare {
     }
 }
 
+var magicSquare = MagicSquare()
 

@@ -25,3 +25,5 @@ struct UseDict {
         return newArr
     }
 }
+
+let useDict = UseDict()

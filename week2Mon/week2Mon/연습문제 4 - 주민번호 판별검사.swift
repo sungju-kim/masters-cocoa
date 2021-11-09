@@ -36,3 +36,5 @@ struct CheckIdNum {
         }
     }
 }
+
+let checkIdNum = CheckIdNum()

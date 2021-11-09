@@ -32,3 +32,5 @@ struct BoolArray {
     }
     
 }
+
+var boolArray = BoolArray()

@@ -33,12 +33,14 @@ struct AntPuzzle {
         }
         return newArr
     }
-    
     func buildArray(line : Int) {
         var array : Array<Int> = [1]
-        for _ in 1...line {
+        print(array)
+        for _ in 0..<line-1 {
             print(antFuntion(inputArray: array))
             array = antFuntion(inputArray: array)
         }
     }
 }
+
+let antPuzzle = AntPuzzle()
