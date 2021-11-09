@@ -13,8 +13,6 @@ struct ArrayPractice {
             print(array[i][(0...i)])
         }
     }
-    
-    
     func fillArray() -> Array<Array<Int>> {
         var numArray = Array(repeating: Array(repeating: 0, count: 5), count: 5)
         var num = 1

@@ -29,7 +29,8 @@ var magicSquare = MagicSquare()
 
 let idCheck = IdCheck()
 
-//idCheck.printId(idInput: idInput)
+
+idCheck.printId()
 
 
 let checkPassword = Password()
@@ -42,8 +43,11 @@ let checkIdNum = CheckIdNum()
 
 let antPuzzle = AntPuzzle()
 
-antPuzzle.buildArray(line: 20)
+//antPuzzle.buildArray(line: 20)
 
 let useDict = UseDict()
 
 //print(useDict.duplicatedWords(inputWords: ["가을", "우주", "너굴", "우주", "겨울", "봄봄", "너굴", "너굴"]))
+
+
+
