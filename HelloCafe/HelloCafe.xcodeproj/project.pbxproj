@@ -13,6 +13,8 @@
 		6C708003273A58E6009BAFFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C708001273A58E6009BAFFE /* Main.storyboard */; };
 		6C708005273A58E7009BAFFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C708004273A58E7009BAFFE /* Assets.xcassets */; };
 		6C708008273A58E7009BAFFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C708006273A58E7009BAFFE /* LaunchScreen.storyboard */; };
+		6C708010273A5942009BAFFE /* cafe-latte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C70800F273A5942009BAFFE /* cafe-latte.jpg */; };
+		6C708012273A5947009BAFFE /* green-tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C708011273A5947009BAFFE /* green-tea.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6C708004273A58E7009BAFFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C708007273A58E7009BAFFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C708009273A58E7009BAFFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C70800F273A5942009BAFFE /* cafe-latte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cafe-latte.jpg"; sourceTree = "<group>"; };
+		6C708011273A5947009BAFFE /* green-tea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "green-tea.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		6C707FFA273A58E6009BAFFE /* HelloCafe */ = {
 			isa = PBXGroup;
 			children = (
+				6C70800F273A5942009BAFFE /* cafe-latte.jpg */,
+				6C708011273A5947009BAFFE /* green-tea.jpg */,
 				6C707FFB273A58E6009BAFFE /* AppDelegate.swift */,
 				6C707FFD273A58E6009BAFFE /* SceneDelegate.swift */,
 				6C707FFF273A58E6009BAFFE /* ViewController.swift */,
@@ -128,6 +134,8 @@
 				6C708008273A58E7009BAFFE /* LaunchScreen.storyboard in Resources */,
 				6C708005273A58E7009BAFFE /* Assets.xcassets in Resources */,
 				6C708003273A58E6009BAFFE /* Main.storyboard in Resources */,
+				6C708010273A5942009BAFFE /* cafe-latte.jpg in Resources */,
+				6C708012273A5947009BAFFE /* green-tea.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
