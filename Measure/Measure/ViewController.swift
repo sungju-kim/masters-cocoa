@@ -9,11 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var typeValue: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func convertButton(_ sender: Any) {
+        
+    }
+    
+    @IBOutlet weak var showValue: UILabel!
 
 }
 
