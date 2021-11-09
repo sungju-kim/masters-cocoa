@@ -13,24 +13,23 @@ struct AntPuzzle {
         let arrayLength = nowArray.count
         var newArr : Array<Int> = []
         var count = 1
-        if arrayLength > 1 {
-            for i in 1...(arrayLength-1) {
+        if arrayLength >= 1 {
+            for i in 0...(arrayLength-1) {
                 if i < (arrayLength-1) {
-                    if nowArray[i] == nowArray[i-1] {
+                    if nowArray[i] == nowArray[i+1] {
                         count += 1
                     }else{
-                        newArr.append(nowArray[i-1])
+                        newArr.append(nowArray[i])
                         newArr.append(count)
                         count = 1
                     }
                 }else {
-                    newArr.append(nowArray[i-1])
-                    count += 1
+                    newArr.append(nowArray[i])
                     newArr.append(count)
                 }
             }
-        }else{
-            newArr = [1,2,2,1,1,1]
+        }else {
+            
         }
         return newArr
     }

@@ -22,7 +22,7 @@ var boolArray = BoolArray()
 
 var magicSquare = MagicSquare()
 
-magicSquare.printMagieSquare(array: magicSquare.makeMagieSquare(row: 5 ),row: 5)
+//magicSquare.printMagieSquare(array: magicSquare.makeMagieSquare(row: 5 ),row: 5)
 
 
 
@@ -42,7 +42,7 @@ let checkIdNum = CheckIdNum()
 
 let antPuzzle = AntPuzzle()
 
-//antPuzzle.buildArray(line: 20)
+antPuzzle.buildArray(line: 20)
 
 let useDict = UseDict()
 
