@@ -77,9 +77,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         default:
             0
         }
-        
-        
     }
     
+    @IBAction func rePlay(_ sender: Any) {
+        wordArr = ["사과","바나나","포도","딸기","파인애플","복숭아","수박","망고","블루베리","배"]
+        newGame()
+    }
 }
 

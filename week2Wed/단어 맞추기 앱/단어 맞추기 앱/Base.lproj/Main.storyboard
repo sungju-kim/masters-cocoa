@@ -47,6 +47,15 @@
                                     <action selector="submitBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="juj-hG-PUZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNF-6B-ury">
+                                <rect key="frame" x="126" y="656" width="123" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다시하기"/>
+                                <connections>
+                                    <action selector="rePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9p-F6-wmP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
