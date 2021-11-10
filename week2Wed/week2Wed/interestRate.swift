@@ -28,8 +28,12 @@ struct InterestRate {
     }
     
     func calcurateAmount(day: Int, amount: Int) -> Double {
-        
-        return Double(amount) + (Double(amount) * getInterestRate(byDay: day))
+        var amountWithInterest = Double(amount)
+        amountWithInterest += (Double(amount) * (getInterestRate(byDay: day) / 100))
+        return amountWithInterest
         
     }
 }
+
+let interestRate = InterestRate()
+
