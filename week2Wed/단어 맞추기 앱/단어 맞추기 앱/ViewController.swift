@@ -20,17 +20,53 @@ class ViewController: UIViewController {
         }
 
         func printLabel() {
-            nowWord.text = wordArr[0]
-            nextWord.text = wordArr[1]
+            switch wordArr.count{
+            case 0...1:
+                nowWord.text = ""
+                nextWord.text = ""
+            case 2:
+                nowWord.text = wordArr[0]
+                nextWord.text = ""
+            case 3...:
+                nowWord.text = wordArr[0]
+                nextWord.text = wordArr[1]
+            default:
+                0
+            }
         }
+    func checkWord(word : String) -> Int {
+        while wordArr.count > 0{
+            if word == nowWord.text{
+                return 1
+            }else if word != nowWord.text{
+                return 0
+            }
+        }
+        return 3
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newGame()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func submitBtn(_ sender: Any) {
-        guard let
+        guard let typedWord = typeWord.text else{return}
+        switch checkWord(word: typedWord) {
+        case 1 :
+            nowWord.textColor = .black
+            wordArr.removeFirst()
+            printLabel()
+            typeWord.text = ""
+        case 0 :
+            nowWord.textColor = .red
+            typeWord.text = ""
+        default:
+            0
+        }
+        
+        
     }
     
 }
