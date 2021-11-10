@@ -48,7 +48,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         newGame()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func submitBtn(_ sender: Any) {
