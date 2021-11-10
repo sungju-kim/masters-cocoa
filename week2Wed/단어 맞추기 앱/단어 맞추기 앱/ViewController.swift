@@ -21,19 +21,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func printLabel() {
         switch wordArr.count{
-        case 0...1:
+        case 0:
             nowWord.text = ""
             nextWord.text = ""
-        case 2:
+        case 1:
             nowWord.text = wordArr[0]
             nextWord.text = ""
-        case 3...:
+        case 2...:
             nowWord.text = wordArr[0]
             nextWord.text = wordArr[1]
         default:
             0
         }
     }
+    
+    @IBAction func submitBtn(_ sender: Any) {
+        guard let typedWord = typeWord.text else{return}
+        switch checkWord(word: typedWord) {
+        case 1 :
+            nowWord.textColor = .black
+            wordArr.removeFirst()
+            printLabel()
+            typeWord.text = ""
+        case 0 :
+            nowWord.textColor = .red
+            typeWord.text = ""
+        default:
+            nowWord.textColor = .black
+        }
+    }
+    
     func checkWord(word : String) -> Int {
         while wordArr.count > 0{
             if word == nowWord.text{
@@ -63,21 +80,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func submitBtn(_ sender: Any) {
-        guard let typedWord = typeWord.text else{return}
-        switch checkWord(word: typedWord) {
-        case 1 :
-            nowWord.textColor = .black
-            wordArr.removeFirst()
-            printLabel()
-            typeWord.text = ""
-        case 0 :
-            nowWord.textColor = .red
-            typeWord.text = ""
-        default:
-            0
-        }
-    }
     
     @IBAction func rePlay(_ sender: Any) {
         wordArr = ["사과","바나나","포도","딸기","파인애플","복숭아","수박","망고","블루베리","배"]
