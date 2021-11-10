@@ -19,18 +19,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var countNum = 0
         var countWord = 0
         var countSymbol = 0
-        
-        for i in 0...(passwordLength-1) {
-            if(passwordArr[i].asciiValue! >= 97) && (passwordArr[i].asciiValue! <= 122) || (passwordArr[i].asciiValue! >= 65) && (passwordArr[i].asciiValue! <= 90) {  //영문자
-                countWord += 1
-            }else if (passwordArr[i].asciiValue! >= 48) && (passwordArr[i].asciiValue! <= 57) { //숫자
-                countNum += 1
-                
-            }else if (passwordArr[i].asciiValue! >= 33) && (passwordArr[i].asciiValue! <= 126) { // 특수문자
-                countSymbol += 1
+        if passwordLength != 0{
+            for i in 0...(passwordLength-1) {
+                if(passwordArr[i].asciiValue! >= 97) && (passwordArr[i].asciiValue! <= 122) || (passwordArr[i].asciiValue! >= 65) && (passwordArr[i].asciiValue! <= 90) {  //영문자
+                    countWord += 1
+                }else if (passwordArr[i].asciiValue! >= 48) && (passwordArr[i].asciiValue! <= 57) { //숫자
+                    countNum += 1
+                    
+                }else if (passwordArr[i].asciiValue! >= 33) && (passwordArr[i].asciiValue! <= 126) { // 특수문자
+                    countSymbol += 1
+                }
             }
         }
-        
         if (countNum > 1) && (countWord > 1) && (countSymbol > 1 ) && (passwordLength >= 8) {
             return 5
         }else if (countWord >= 1) && (countNum >= 1) && (passwordLength >= 8) {
@@ -93,6 +93,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func removeText(){
         passwordInput.text = ""
         printColorOf(passwordGrade: 6)
+    }
+    func recommandPassword() {
+        
     }
     
     
