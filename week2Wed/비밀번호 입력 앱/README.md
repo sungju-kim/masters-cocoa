@@ -24,7 +24,7 @@
 > * 아주 강한 암호를 랜덤으로 만들어서 추천해주려면?
 > * 버튼을 누를 때 마다가 아니라 비밀번호를 입력 할 때마다 하려면?
 
-https://user-images.githubusercontent.com/78553659/141091995-03816844-b757-4d49-ba44-ff109c33f215.gif
+![my_video](https://user-images.githubusercontent.com/78553659/141091995-03816844-b757-4d49-ba44-ff109c33f215.gif)
 
 
 
