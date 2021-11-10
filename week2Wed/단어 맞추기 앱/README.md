@@ -16,3 +16,5 @@
 >> * 틀렸을 때 Label에 글자색을 red로 표시한다. 맞추면 다시 black으로 변경한다.
 >
 >### 구현 
+><p align="center"><img width="50%" src="https://user-images.githubusercontent.com/78553659/141096212-035187aa-dedc-48fa-a096-ea5dfec3083c.gif"/></p>
+> 
