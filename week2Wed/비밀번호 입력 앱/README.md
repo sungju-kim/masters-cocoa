@@ -25,5 +25,5 @@
 >> * 버튼을 누를 때 마다가 아니라 비밀번호를 입력 할 때마다 하려면?
 >
 >### 구현 ***
->> <p align="center"><img width="30%" src="https://user-images.githubusercontent.com/78553659/141091995-03816844-b757-4d49-ba44-ff109c33f215.gif"/></p>
+>> <p align="center"><img width="40%" src="https://user-images.githubusercontent.com/78553659/141091995-03816844-b757-4d49-ba44-ff109c33f215.gif"/></p>
 ***
