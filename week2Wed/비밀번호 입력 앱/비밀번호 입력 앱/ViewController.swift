@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var levelView: UIView!
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         var countNum = 0
         var countWord = 0
         var countSymbol = 0
+        
         for i in 0...(passwordLength-1) {
             if(passwordArr[i].asciiValue! >= 97) && (passwordArr[i].asciiValue! <= 122) || (passwordArr[i].asciiValue! >= 65) && (passwordArr[i].asciiValue! <= 90) {  //영문자
                 countWord += 1
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
                 countSymbol += 1
             }
         }
+        
         if (countNum > 1) && (countWord > 1) && (countSymbol > 1 ) && (passwordLength >= 8) {
             return 5
         }else if (countWord >= 1) && (countNum >= 1) && (passwordLength >= 8) {
@@ -43,6 +45,15 @@ class ViewController: UIViewController {
         
     }
 
+    @objc func textFieldDidChange(textField : UITextField){
+        guard let passwordInput = passwordInput.text else { return  }
+        if passwordInput.count >= 1 {
+            printColorOf(passwordGrade: passwordValidator(password: passwordInput))
+        }else{
+            printColorOf(passwordGrade: 6)
+        }
+    }
+    
     func printColorOf(passwordGrade : Int) {
         switch passwordGrade {
         case 1 :
@@ -64,18 +75,31 @@ class ViewController: UIViewController {
             levelView.backgroundColor = .secondarySystemBackground
             descriptionLabel.text = "암호 수준"
         }
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        passwordInput.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    func removeText(){
+        passwordInput.text = ""
+        printColorOf(passwordGrade: 6)
     }
     
     
     @IBAction func verifyBtn(_ sender: Any) {
-        guard let passwordInput = passwordInput.text else { return  }
+        guard var passwordInput = passwordInput.text else { return  }
         printColorOf(passwordGrade: passwordValidator(password: passwordInput))
+        removeText()
     }
 }
 
