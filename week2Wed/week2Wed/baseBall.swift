@@ -40,9 +40,7 @@ struct BaseBall {
         }
         printResult(strike : strikeCount, ball: ballCount, originArr: arr)
     }
-    func tryAgain() {
-        
-    }
+   
     func printResult(strike : Int, ball : Int, originArr : Array<Int>) {
         print("\(strike) 스트라이크 \(ball) 볼")
         print("")
