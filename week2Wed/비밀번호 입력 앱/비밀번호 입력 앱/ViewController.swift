@@ -13,6 +13,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        passwordInput.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
     func passwordValidator(password:String) -> Int {
         let passwordArr = password.map{($0)}
         let passwordLength = passwordArr.count
@@ -85,14 +94,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        passwordInput.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
-    }
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
