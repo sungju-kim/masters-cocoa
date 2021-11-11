@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-
+    
     @objc func textFieldDidChange(textField : UITextField){
         guard let passwordInput = passwordInput.text else { return  }
         if passwordInput.count >= 1 {
@@ -52,6 +52,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }else{
             printColorOf(passwordGrade: 6)
         }
+    }
+    
+    @IBAction func verifyBtn(_ sender: Any) {
+        guard let passwordInput = passwordInput.text else { return  }
+        printColorOf(passwordGrade: passwordValidator(password: passwordInput))
+        removeText()
     }
     
     func printColorOf(passwordGrade : Int) {
@@ -99,10 +105,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func verifyBtn(_ sender: Any) {
-        guard var passwordInput = passwordInput.text else { return  }
-        printColorOf(passwordGrade: passwordValidator(password: passwordInput))
-        removeText()
-    }
+    
 }
 

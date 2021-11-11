@@ -13,7 +13,9 @@ struct InterestRate {
         var interestRate : Double = 0
         
         switch byDay {
-        case 0...90 :
+        case 0 :
+            interestRate = 0.0
+        case 1...90 :
             interestRate = 0.5
         case 91...180 :
             interestRate = 1
