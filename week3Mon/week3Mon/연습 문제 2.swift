@@ -32,6 +32,15 @@ struct BinaryNumber {
     func find(by bitcount: Int) -> Array<String> {
         return values.filter{$0.filter{$0 == "1"}.count == bitcount}
     }
+    
+    
+    func printCount(){
+        print(count)
+    }
+    func printFind(_ number : Int){
+        print(find(by: number))
+    }
+    
 }
 
 
