@@ -15,5 +15,5 @@ import Foundation
 //binaryNumber.printCount()
 //binaryNumber.printFind(3)
 
-//let bubbleSort = BubbleSort(arr: [1,3,5,4,2,9,3,2,10,31])
-//bubbleSort.printSort(isAscending: false)
+let bubbleSort = BubbleSort(arr: [1,1,1,65,3,5,4,2,9,3,2,10,31])
+bubbleSort.printSort(isAscending: false)
