@@ -11,3 +11,8 @@ import Foundation
 //firstMatrix.product(with: secondMatrix).printMatrix()
 
 
+let binaryNumber = BinaryNumber(with: 5)
+print(binaryNumber.count)
+print(binaryNumber.find(by: 3))
+
+

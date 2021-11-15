@@ -8,7 +8,42 @@
 import Foundation
 
 struct BinaryNumber {
+    private var values : [String] = []
+    
     init(with total : Int) {
-        
+        let powedMax = (pow(2, total))
+        let maxNum = NSDecimalNumber(decimal: powedMax)
+        let intMax = Int(truncating: maxNum)
+        for i  in 0..<intMax{
+            var item = String(i, radix : 2)
+            switch item.count {
+            case 1:
+                item = "0000" + item
+            case 2:
+                item = "000" + item
+            case 3:
+                item = "00" + item
+            case 4:
+                item = "0" + item
+            default:
+                5
+            }
+            values.append(item)
+        }
+    }
+    
+    
+    var count : Int {
+        get {
+            return values.count
+        }
+    }
+    
+    func find(by bitcount: Int) -> Array<String> {
+        return values.filter{$0.filter{$0 == "1"}.count == bitcount}
     }
 }
+
+
+
+
