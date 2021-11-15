@@ -7,7 +7,7 @@
 
 import Foundation
 
-firstMatrix.sum(with: secondMatrix).printMatrix()
-firstMatrix.product(with: secondMatrix).printMatrix()
+//firstMatrix.sum(with: secondMatrix).printMatrix()
+//firstMatrix.product(with: secondMatrix).printMatrix()
 
 
