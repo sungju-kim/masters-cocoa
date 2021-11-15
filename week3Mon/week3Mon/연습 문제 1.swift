@@ -13,11 +13,11 @@ class Matrix {
     var c : Double
     var d : Double
     
-    init() {
-        a = 0
-        b = 0
-        c = 0
-        d = 0
+    init(a : Double = 0.0, b : Double = 0.0, c : Double = 0.0, d : Double = 0.0) {
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
     }
     func sum(with other: Matrix) -> Matrix{
         let matrix = Matrix()
@@ -42,26 +42,5 @@ class Matrix {
     }
 }
 
-class FirstMatrix : Matrix {
-    override init() {
-        super.init()
-        a = 4
-        b = 4
-        c = 4
-        d = 4
-        
-    }
-}
-
-class SecondMatrix : Matrix {
-    override init() {
-        super.init()
-        a = 6
-        b = 6
-        c = 6
-        d = 6
-    }
-}
-
-var firstMatrix = FirstMatrix()
-var secondMatrix = SecondMatrix()
+var firstMatrix = Matrix(a: 4, b: 4, c: 4, d: 4)
+var secondMatrix = Matrix(a: 6, b: 6, c: 6, d: 6)
