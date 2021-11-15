@@ -35,6 +35,10 @@ class BubbleSort {
             newArr[bIndex] = beforeSwap
         }
         return newArr
+        
+    }
+    func printSort(isAscending : Bool) {
+        print(sorted(isAscending: isAscending))
     }
     
     
