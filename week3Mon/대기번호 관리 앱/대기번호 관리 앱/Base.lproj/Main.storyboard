@@ -60,7 +60,7 @@
                                     <action selector="increaseWaiting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PvW-fW-1cI"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-FT-3pP">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-FT-3pP">
                                 <rect key="frame" x="20" y="370" width="335" height="4"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -72,7 +72,7 @@
                         <outlet property="completeBtn" destination="0Sx-3Q-be7" id="Xoj-jF-OAe"/>
                         <outlet property="waitingBtn" destination="Izp-4W-nuC" id="gKa-uC-41k"/>
                         <outlet property="waitingCounter" destination="D7T-Fm-Uwx" id="wa4-JP-ELh"/>
-                        <outlet property="waitingProgressBar" destination="8bC-Xf-vdC" id="lHc-vR-AJa"/>
+                        <outlet property="waitingProgress" destination="7s5-FT-3pP" id="MIe-Hv-UVO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
