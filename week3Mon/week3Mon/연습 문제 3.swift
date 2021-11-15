@@ -12,7 +12,6 @@ class BubbleSort {
     init(arr : [Int]) {
         numArr = arr
     }
-    
     func sorted(isAscending: Bool) -> Array<Int> {
         var newArr = numArr
         let length = newArr.count
@@ -35,13 +34,10 @@ class BubbleSort {
             newArr[bIndex] = beforeSwap
         }
         return newArr
-        
     }
     func printSort(isAscending : Bool) {
         print(sorted(isAscending: isAscending))
     }
-    
-    
 }
 
 

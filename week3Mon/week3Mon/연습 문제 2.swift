@@ -9,7 +9,6 @@ import Foundation
 
 struct BinaryNumber {
     private var values : [String] = []
-    
     init(with total : Int) {
         let powedMax = pow(2.0, Double(total))
         let intMax = Int(powedMax)
@@ -21,26 +20,20 @@ struct BinaryNumber {
             values.append(item)
         }
     }
-    
-    
     var count : Int {
         get {
             return values.count
         }
     }
-    
     func find(by bitcount: Int) -> Array<String> {
         return values.filter{$0.filter{$0 == "1"}.count == bitcount}
     }
-    
-    
     func printCount(){
         print(count)
     }
     func printFind(_ number : Int){
         print(find(by: number))
     }
-    
 }
 
 

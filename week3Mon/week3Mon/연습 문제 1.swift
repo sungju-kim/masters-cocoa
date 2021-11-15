@@ -41,6 +41,5 @@ class Matrix {
         print("")
     }
 }
-
 var firstMatrix = Matrix(a: 4, b: 4, c: 4, d: 4)
 var secondMatrix = Matrix(a: 6, b: 6, c: 6, d: 6)
