@@ -11,9 +11,8 @@ struct BinaryNumber {
     private var values : [String] = []
     
     init(with total : Int) {
-        let powedMax = (pow(2, total))
-        let maxNum = NSDecimalNumber(decimal: powedMax)
-        let intMax = Int(truncating: maxNum)
+        let powedMax = pow(2.0, Double(total))
+        let intMax = Int(powedMax)
         for i  in 0..<intMax{
             var item = String(i, radix : 2)
             if item.count != total {
