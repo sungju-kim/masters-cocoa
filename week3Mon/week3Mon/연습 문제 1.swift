@@ -45,10 +45,10 @@ class Matrix {
 class FirstMatrix : Matrix {
     override init() {
         super.init()
-            a = 4
-            b = 4
-            c = 4
-            d = 4
+        a = 4
+        b = 4
+        c = 4
+        d = 4
         
     }
 }
