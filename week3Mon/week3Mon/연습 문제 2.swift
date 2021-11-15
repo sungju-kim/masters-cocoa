@@ -16,17 +16,8 @@ struct BinaryNumber {
         let intMax = Int(truncating: maxNum)
         for i  in 0..<intMax{
             var item = String(i, radix : 2)
-            switch item.count {
-            case 1:
-                item = "0000" + item
-            case 2:
-                item = "000" + item
-            case 3:
-                item = "00" + item
-            case 4:
-                item = "0" + item
-            default:
-                5
+            if item.count != total {
+                item = String(repeating: "0", count: (total-item.count)) + item
             }
             values.append(item)
         }
