@@ -36,7 +36,9 @@ class Matrix {
         return matrix
     }
     func printMatrix(){
-        print([a, b, c, d])
+        print([a, b])
+        print([c, d])
+        print("")
     }
 }
 
