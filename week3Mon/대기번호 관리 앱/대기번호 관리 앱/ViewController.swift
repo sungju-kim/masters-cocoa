@@ -43,9 +43,6 @@ class ViewController: UIViewController {
             waitingCounter.text = "0\(counter) 명"
         case 10...:
             waitingCounter.text = "\(counter) 명"
-        case 20:
-            waitingCounter.textColor = .red
-            waitingProgress.progressTintColor = .red
         default:
             waitingCounter.text = "00 명"
         }
