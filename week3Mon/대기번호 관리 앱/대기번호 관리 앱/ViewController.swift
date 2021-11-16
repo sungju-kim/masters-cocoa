@@ -12,10 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var waitingCounter: UILabel!
     @IBOutlet weak var waitingBtn: UIButton!
     @IBOutlet weak var completeBtn: UIButton!
-    
     @IBOutlet weak var waitingProgress: UIProgressView!
     var counter = 0
-    var progress = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
