@@ -25,57 +25,47 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func increaseWaiting(_ sender: Any) {
-        completeBtn.isEnabled = true
+    @IBAction func pressedBtn(_ sender: UIButton) {
+        guard let title = sender.titleLabel?.text else {return}
+        if title == "대기" {
+            counter += 1
+        }else if title == "완료"{
+            counter -= 1
+        }
+        printLabel()
+        printProgress()
+        setEnable()
+        colorLabel()
+    }
+    func printLabel() {
         switch counter {
-        case 0...8:
-            counter += 1
+        case 0...9:
             waitingCounter.text = "0\(counter) 명"
-            waitingProgress.progress += 0.05
-        case 9...18:
-            counter += 1
+        case 10...:
             waitingCounter.text = "\(counter) 명"
-            waitingProgress.progress += 0.05
-
-        case 19:
-            counter += 1
-            waitingCounter.text = "\(counter) 명"
+        case 20:
             waitingCounter.textColor = .red
-            waitingBtn.isEnabled = false
-            waitingProgress.progress += 0.05
             waitingProgress.progressTintColor = .red
         default:
             waitingCounter.text = "00 명"
         }
     }
-    
-    @IBAction func decreaseWaiting(_ sender: Any) {
+    func printProgress() {
+        waitingProgress.setProgress(Float(counter)/20, animated: true)
+    }
+    func setEnable() {
+        waitingBtn.isEnabled = counter < 20
+        completeBtn.isEnabled = counter > 0
+    }
+    func colorLabel() {
         switch counter{
-        case 1:
-            counter -= 1
-            waitingProgress.progress = 0.00
-            waitingCounter.text = "0\(counter) 명"
-            completeBtn.isEnabled = false
-        case 2...9:
-            counter -= 1
-            waitingProgress.progress -= 0.05
-            waitingCounter.text = "0\(counter) 명"
-        case 10...19:
-            counter -= 1
-            waitingProgress.progress -= 0.05
-            waitingCounter.text = "\(counter) 명"
         case 20:
-            counter -= 1
-            waitingProgress.progress -= 0.05
-            waitingCounter.text = "\(counter) 명"
+            waitingCounter.textColor = .red
+            waitingProgress.progressTintColor = .red
+        default :
             waitingCounter.textColor = .black
             waitingProgress.progressTintColor = .blue
-            waitingBtn.isEnabled = true
-        default:
-            waitingCounter.text = "00 명"
         }
-
     }
     
 }
