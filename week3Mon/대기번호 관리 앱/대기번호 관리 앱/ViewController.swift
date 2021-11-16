@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         switch counter{
         case 1:
             counter -= 1
-            waitingProgress.progress -= 0.05
+            waitingProgress.progress = 0.00
             waitingCounter.text = "0\(counter) 명"
             completeBtn.isEnabled = false
         case 2...9:

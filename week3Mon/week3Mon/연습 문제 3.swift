@@ -17,7 +17,7 @@ class BubbleSort {
         let length = newArr.count
         for _ in 0..<length{
             for j in 0..<length-1{
-                if isAscending == true {
+                if isAscending {
                     if newArr[j] > newArr[j+1] {
                         swap(j, j+1)
                     }

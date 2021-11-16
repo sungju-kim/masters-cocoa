@@ -20,20 +20,10 @@ class Matrix {
         self.d = d
     }
     func sum(with other: Matrix) -> Matrix{
-        let matrix = Matrix()
-        matrix.a = a + other.a
-        matrix.b = b + other.b
-        matrix.c = c + other.c
-        matrix.d = d + other.d
-        return matrix
+        return Matrix(a: a + other.a, b: b + other.b, c: c + other.c, d: d + other.d)
     }
     func product(with other: Matrix) -> Matrix{
-        let matrix = Matrix()
-        matrix.a = a*other.a + b*other.b
-        matrix.b = a*other.b + b*other.d
-        matrix.c = c*other.a + d*other.c
-        matrix.d = c*other.b + d*other.d
-        return matrix
+        return Matrix(a: a*other.a + b*other.b, b: a*other.b + b*other.d, c: c*other.a + d*other.c, d: c*other.b + d*other.d)
     }
     func printMatrix(){
         print([a, b])
