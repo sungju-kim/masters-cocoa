@@ -29,8 +29,8 @@ struct Brackets {
         }
     }
     
-    func generate(with count:Int) -> Array<String> {
-        var arr : [String] = []
+    func generate(with count:Int) -> Array<String> { // C5 = C0*C4 + C1*C3 + C2*C2 +C3*C1 + C4*C0
+var arr : [String] = []
         if count == 0 {
             arr.append("")
         }
