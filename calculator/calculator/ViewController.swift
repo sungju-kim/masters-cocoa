@@ -133,6 +133,13 @@ class ViewController: UIViewController {
             
         }
     }
+    @IBAction func removeOneString(_ sender: Any) {
+        guard var newLabel = resultLabel.text else {return}
+        if newLabel.count > 0{
+            newLabel.removeLast()
+            resultLabel.text = String(newLabel)
+        }
+    }
     @IBAction func resetBtn(_ sender: Any) {
         numStack = []
         operatorStack = []
