@@ -9,7 +9,7 @@ import Foundation
 
 let bracket = Brackets(.round)
 //print(bracket.analyze(with: "())()(("))
-print(bracket.generate(with: 3))
+print(bracket.generate(with: 6))
 
 //print(sum(value: 0.001, repeat: 1000))
 //
