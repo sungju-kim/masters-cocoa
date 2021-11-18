@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
     func paintLabel(_ text : String){
         if lastInput == "="{
-            resultLabel.text = ""
+            printLabel("")
         }
         switch text{
         case "0","1","2","3","4","5","6","7","8","9":
@@ -56,42 +56,50 @@ class ViewController: UIViewController {
             lastInput = text
         case ".":
             if lastInput == ""{
-                resultLabel.text = "0"+text
+                printLabel("0"+text)
             }else if !resultLabel.text!.contains(".") && lastInput != "."{
-                resultLabel.text = resultLabel.text! + text
+                printLabel(resultLabel.text! + text)
                 lastInput = text
             }
         default:
-            resultLabel.text = "text"
+            printLabel("\(text)")
         }
     }
+    
+    func printLabel(_ string : String) {
+        resultLabel.text = string
+    }
     @IBAction func operatorBtn(_ sender: UIButton) {
-        guard let btn = sender.titleLabel?.text else {return}
+        guard let pressedBtn = sender.titleLabel?.text else {return}
         guard let number = Double(resultLabel.text ?? "0") else {return}
-        if (numStack.isEmpty || lastOperator == "=") && operatorStack.isEmpty {
-            operatorStack.append(btn)
-            if btn != "=" && number != 0 {
+        let confirmValid : (Bool) -> Bool = {$0 ? true : false}
+        let isFirstInput = confirmValid(numStack.isEmpty)
+        let newCalculation = confirmValid(lastOperator == "=")
+        let operatorIsValid = confirmValid(operatorStack.isEmpty)
+        if (isFirstInput || newCalculation) && operatorIsValid {
+            operatorStack.append(pressedBtn)
+            if pressedBtn != "=" && number != 0 {
                 numStack.append(number)
                 loadStack()
-                resultLabel.text = ""
+                printLabel("")
             }else{
-                resultLabel.text = ""
+                printLabel("")
             }
-        }else if btn == "="{
-            lastInput = btn
-            lastOperator = btn
+        }else if pressedBtn == "="{
+            lastInput = pressedBtn
+            lastOperator = pressedBtn
             numStack.append(number)
             calculate()
             loadStack()
-            resultLabel.text = String(numStack.last!)
+            printLabel(String(numStack.last!))
             calCount += 1
             
         }else {
-            operatorStack.append(btn)
+            operatorStack.append(pressedBtn)
             numStack.append(number)
             calculate()
             loadStack()
-            resultLabel.text = ""
+            printLabel("")
         }
         
     }
@@ -145,7 +153,7 @@ class ViewController: UIViewController {
         operatorStack = []
         calCount = 0
         lastInput = ""
-        resultLabel.text = ""
+        printLabel("")
         lastOperator = ""
         stack1.text = "Stack 1"
         stack2.text = "Stack 2"
@@ -155,4 +163,5 @@ class ViewController: UIViewController {
     }
     
 }
+
 
