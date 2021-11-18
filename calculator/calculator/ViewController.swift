@@ -123,17 +123,18 @@ class ViewController: UIViewController {
     }
     func loadStack(){
         let stackedIndex = numStack.count % 5
+        let stringOfLastCalculation = String(numStack[numStack.count - 1])
         switch stackedIndex{
         case 1:
-            stack1.text = String(numStack[numStack.count - 1])
+            stack1.text = stringOfLastCalculation
         case 2:
-            stack2.text = String(numStack[numStack.count - 1])
+            stack2.text = stringOfLastCalculation
         case 3:
-            stack3.text = String(numStack[numStack.count - 1])
+            stack3.text = stringOfLastCalculation
         case 4:
-            stack4.text = String(numStack[numStack.count - 1])
+            stack4.text = stringOfLastCalculation
         case 0:
-            stack5.text = String(numStack[numStack.count - 1])
+            stack5.text = stringOfLastCalculation
         default:
             stack1.text = ""
             stack2.text = ""
