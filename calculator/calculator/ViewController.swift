@@ -72,13 +72,15 @@ class ViewController: UIViewController {
     @IBAction func operatorBtn(_ sender: UIButton) {
         guard let pressedBtn = sender.titleLabel?.text else {return}
         guard let number = Double(resultLabel.text ?? "0") else {return}
-        let confirmValid : (Bool) -> Bool = {$0 ? true : false}
-        let isFirstInput = confirmValid(numStack.isEmpty)
-        let newCalculation = confirmValid(lastOperator == "=")
-        let operatorIsValid = confirmValid(operatorStack.isEmpty)
+        let isFirstInput = numStack.isEmpty
+        let newCalculation = lastOperator == "="
+        let operatorIsValid = operatorStack.isEmpty
+        let pressedBtnIsValid = pressedBtn != "="
+        let inPutNumIsNotZero = number != 0
+        
         if (isFirstInput || newCalculation) && operatorIsValid {
             operatorStack.append(pressedBtn)
-            if pressedBtn != "=" && number != 0 {
+            if pressedBtnIsValid && inPutNumIsNotZero {
                 numStack.append(number)
                 loadStack()
                 printLabel("")
