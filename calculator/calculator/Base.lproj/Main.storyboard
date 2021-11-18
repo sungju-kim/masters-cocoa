@@ -58,7 +58,7 @@
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="+/-">
+                                <state key="normal" title="del">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -67,7 +67,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GhB-w3-Ghc"/>
+                                    <action selector="removeOneString:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6AI-IQ-CMx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za4-wP-cRt">

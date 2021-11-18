@@ -16,30 +16,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var stack3: UILabel!
     @IBOutlet weak var stack4: UILabel!
     
-    struct Calculator {
-        func add(_ num1 : Double, _ num2: Double)->Double{
-            return num1 + num2
-        }
-        func minus(_ num1 : Double, _ num2: Double)->Double {
-            return num1 - num2
-        }
-        func divide(_ num1 : Double, _ num2: Double)->Double {
-            return num1 / num2
-        }
-        func multiply(_ num1 : Double, _ num2: Double)->Double {
-            return num1 * num2
-        }
-    }
-    let myCalculator = Calculator()
-    
     var numStack : [Double] = []
     var calCount = 0
     var lastInput : String = ""
     var lastOperator : String = ""
     var operatorStack : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder()
         // Do any additional setup after loading the view.
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            resetBtn(UIButton.self)
+        }
     }
     
     @IBAction func buttonPress(_ sender: UIButton) {
