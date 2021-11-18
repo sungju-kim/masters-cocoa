@@ -104,16 +104,12 @@ class ViewController: UIViewController {
             numStack[calCount] = numStack[calCount] + numStack.removeLast()
         case"-":
             numStack[calCount] = numStack[calCount] - numStack.removeLast()
-            
         case"x":
             numStack[calCount] = numStack[calCount] * numStack.removeLast()
-            
         case"÷":
             numStack[calCount] = numStack[calCount] / numStack.removeLast()
-            
         default :
-            numStack[calCount] = 0
-            
+            return
         }
         
     }
@@ -151,7 +147,6 @@ class ViewController: UIViewController {
         stack3.text = "Stack 3"
         stack4.text = "Stack 4"
         stack5.text = "Stack 5"
-        
     }
     
 }
