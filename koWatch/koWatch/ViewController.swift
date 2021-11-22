@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.secondLabel.numberOfLines = 0
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.paintLabel), userInfo: nil, repeats: true)
-        
     }
     
     func getTime() -> (Int, Int, Int, Bool) {
@@ -48,9 +47,7 @@ class ViewController: UIViewController {
             sunOrMoon.text = "🌙"
         }
     }
-    
-    
-    
+
     @objc func paintLabel(){
         let (hour, minute, second, morning) = getTime()
         if second == 0{
