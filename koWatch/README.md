@@ -12,5 +12,5 @@
 >
 >
 >### 구현 
-><p align="center"><img width="40%" src="https://user-images.githubusercontent.com/78553659/142819910-6ea58d38-e9c4-4c0f-b0f3-c643a1baf451.gif"/></p>
+><p align="center"><img width="40%" src="https://user-images.githubusercontent.com/78553659/142825737-d23c53a5-7007-497b-8823-d4e7bcc71e78.gif"/></p>
 > 
