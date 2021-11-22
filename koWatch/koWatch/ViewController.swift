@@ -19,11 +19,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sunOrMoon: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.secondLabel.numberOfLines = 0
 //        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.paintLabel), userInfo: nil, repeats: true)
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {timer in self.paintLabel()})
+        
     }
     @objc func paintLabel(){
         let (hour, minute, second, morning) = getTime()
@@ -39,7 +42,15 @@ class ViewController: UIViewController {
         paintAmPm(morning)
         paintHour(hour)
         paintMinute(minute)
-        paintSeconds(second)
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
+            self.secondLabel.transform = .init(scaleX: 1.25, y: 1.25)
+        }) { (finished: Bool) -> Void in
+            self.secondLabel.text =  self.paintSeconds(self.getTime().2)
+            UIView.animate(withDuration: 1, animations: { () -> Void in
+                self.secondLabel.transform = .identity
+            })
+        }
+//        paintSeconds(second)
     }
     
     func getTime() -> (Int, Int, Int, Bool) {
@@ -122,16 +133,28 @@ class ViewController: UIViewController {
             minutesLabels[14].textColor = .gray
         }
     }
-    func paintSeconds(_ second : Int) {
+//    func paintSeconds(_ second : Int) {
+//        switch second {
+//        case 1...9:
+//            secondLabel.text = intToKo(second%10) + "초"
+//        case 10...19:
+//            secondLabel.text = "십\n" + intToKo(second%10) + "초"
+//        case 20...59:
+//            secondLabel.text = intToKo(second/10) + "십\n" + intToKo(second%10) + "초"
+//        default:
+//            secondLabel.text = "정각"
+//        }
+//    }
+    func paintSeconds(_ second : Int) -> String{
         switch second {
         case 1...9:
-            secondLabel.text = intToKo(second%10) + "초"
+            return intToKo(second%10) + "초"
         case 10...19:
-            secondLabel.text = "십\n" + intToKo(second%10) + "초"
+            return "십\n" + intToKo(second%10) + "초"
         case 20...59:
-            secondLabel.text = intToKo(second/10) + "십\n" + intToKo(second%10) + "초"
+            return intToKo(second/10) + "십\n" + intToKo(second%10) + "초"
         default:
-            secondLabel.text = "정각"
+            return "정각"
         }
     }
     func paintDefault(hour : Bool) {
