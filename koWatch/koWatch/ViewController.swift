@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             if minute == 0 {
                 paintDefault(hour: true)
                 if hour == 7 {
-                    moon(morning)
+                    sun(morning)
                 }
             }
         }
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         return (hour, minute, second, morning)
     }
     
-    func moon(_ activate: Bool) {
+    func sun(_ activate: Bool) {
         switch activate{
         case true :
             sunOrMoon.text = "☀️"
