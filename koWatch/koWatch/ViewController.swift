@@ -22,7 +22,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.secondLabel.numberOfLines = 0
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.paintLabel), userInfo: nil, repeats: true)
+//        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.paintLabel), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {timer in self.paintLabel()})
+    }
+    @objc func paintLabel(){
+        let (hour, minute, second, morning) = getTime()
+        if second == 0{
+            paintDefault(hour: false)
+            if minute == 0 {
+                paintDefault(hour: true)
+                if hour == 7 {
+                    moon(morning)
+                }
+            }
+        }
+        paintAmPm(morning)
+        paintHour(hour)
+        paintMinute(minute)
+        paintSeconds(second)
     }
     
     func getTime() -> (Int, Int, Int, Bool) {
@@ -48,22 +65,6 @@ class ViewController: UIViewController {
         }
     }
 
-    @objc func paintLabel(){
-        let (hour, minute, second, morning) = getTime()
-        if second == 0{
-            paintDefault(hour: false)
-            if minute == 0 {
-                paintDefault(hour: true)
-                if hour == 7 {
-                    moon(morning)
-                }
-            }
-        }
-        paintAmPm(morning)
-        paintHour(hour)
-        paintMinute(minute)
-        paintSeconds(second)
-    }
     
     func paintAmPm(_ morning : Bool){
         amPmLabel[0].textColor = .white
