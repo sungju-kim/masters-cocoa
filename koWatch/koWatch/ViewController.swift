@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         if !morning {
             hour -= 12
         }
-        
         return (hour, minute, second, morning)
     }
     
