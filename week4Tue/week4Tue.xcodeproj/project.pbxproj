@@ -27,6 +27,8 @@
 		6C12EE77274CCD79002EAC66 /* week4Tue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = week4Tue; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C12EE7A274CCD79002EAC66 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6C12EE81274CCDCB002EAC66 /* displayFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayFile.swift; sourceTree = "<group>"; };
+		6C12EE83274CD761002EAC66 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6C12EE84274CD7C6002EAC66 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,8 @@
 			children = (
 				6C12EE7A274CCD79002EAC66 /* main.swift */,
 				6C12EE81274CCDCB002EAC66 /* displayFile.swift */,
+				6C12EE83274CD761002EAC66 /* README.md */,
+				6C12EE84274CD7C6002EAC66 /* screenshot.png */,
 			);
 			path = week4Tue;
 			sourceTree = "<group>";
