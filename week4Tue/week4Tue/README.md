@@ -6,5 +6,5 @@
 >
 >
 >### 구현 
-><p align="center"><img width="40%" src="/Users/KSJ/Desktop/swift/masters-cocoa/week4Tue/week4Tue/screenshot.png"/></p>
+><p align="center"><img width="40%" src="/masters-cocoa/week4Tue/week4Tue/screenshot.png"/></p>
 > 
