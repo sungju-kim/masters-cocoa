@@ -25,8 +25,8 @@ class WordFinder {
         RunLoop.current.run()
     }
     
-    @objc func count(_ word: String){
-        print("\(word) = \(textToArr.filter{$0.contains(word)}.count) times in this text")
+    @objc func count(_ i: String){
+        print("\(i) = \(textToArr.filter{$0.contains(i)}.count) times in this text")
 //        print(Thread.current)
     }
 }
