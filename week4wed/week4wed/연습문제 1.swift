@@ -8,12 +8,7 @@
 import Foundation
 
 struct Files {
-//    var path : String
-//    var filename : String
-//    init(path: String, filename: String) {
-//        self.path = path
-//        self.filename = filename
-//    }
+
     func files(at path: String) -> Array<String> {
         return try!FileManager.default.contentsOfDirectory(atPath: path).sorted()
     }
