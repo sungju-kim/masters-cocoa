@@ -19,14 +19,13 @@ class WordFinder {
     }
     func thread() {
         for i in wordArr{
-            let thread = Thread(target:self, selector: #selector(count(_:)), object: i)
+            let thread = Thread{
+                print("\(i) = \(self.textToArr.filter{$0.contains(i)}.count) times in this text")
+//                print(Thread.current)
+            }
             thread.start()
         }
         RunLoop.current.run()
-    }
-    @objc func count(_ i: String){
-        print("\(i) = \(textToArr.filter{$0.contains(i)}.count) times in this text")
-//        print(Thread.current)
     }
 }
 
