@@ -8,24 +8,29 @@
 import Foundation
 
 class WordFinder {
-    
-    func wordCounter(filename : String){
-        let wordArr = ["대중", "경제", "재산", "자유", "국제",
-                       "시장", "사상", "부자", "학자", "개인",
-                       "욕망", "생활", "자원", "사람", "노동",
-                       "인물", "소비", "사회", "이론", "새로운"]
+    let wordArr = ["대중", "경제", "재산", "자유", "국제",
+                   "시장", "사상", "부자", "학자", "개인",
+                   "욕망", "생활", "자원", "사람", "노동",
+                   "인물", "소비", "사회", "이론", "새로운"]
+    var textToArr : [String] = []
+    init(filename : String){
         let contents = try!String(contentsOfFile: "\(filename)")
-        let csv = contents.replacingOccurrences(of: "\r", with: "\n").replacingOccurrences(of: "\n\n", with: "\n").replacingOccurrences(of: "\n", with: "")
-        let textToArr = csv.components(separatedBy: " ").map{$0}
-        let thread = Thread{
-            for i in wordArr{
-                print("\(i) = \(textToArr.filter{$0 == i}.count) times in this text")
-            }
+        textToArr = contents.components(separatedBy: " ").map{$0}
+    }
+    func thread() {
+        for i in wordArr{
+            let thread = Thread(target:self, selector: #selector(count(_:)), object: i)
+            thread.start()
         }
-        thread.start()
         RunLoop.current.run()
+    }
+    
+    @objc func count(_ word: String){
+        print("\(word) = \(textToArr.filter{$0.contains(word)}.count) times in this text")
+//        print(Thread.current)
     }
 }
 
 
-let wordFinder = WordFinder()
+let wordFinder = WordFinder(filename: "/Users/KSJ/Desktop/bookfile.txt")
+

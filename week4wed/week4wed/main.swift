@@ -17,5 +17,5 @@ import Foundation
 //codesquad.write(to: "export.csv")
 
 
-wordFinder.wordCounter(filename: "/Users/KSJ/Desktop/bookfile.txt")
+wordFinder.thread()
 
