@@ -13,9 +13,9 @@ import Foundation
 
 //print(codesquad.squadArr)
 //print(codesquad.findBy(name: "JK"))
-//print(codesquad.removeBy(email: "crong@codesquad.kr"))
+print(codesquad.removeBy(email: "crong@codesquad.kr"))
 //codesquad.write(to: "export.csv")
 
 
-wordFinder.thread()
+//wordFinder.thread()
 
