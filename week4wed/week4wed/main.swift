@@ -9,5 +9,9 @@ import Foundation
 
 
 
-files.printResult("isExist", "/System/Library/Desktop Pictures", "Big Sur Aerial.madesktop,Big Sur Coastline.madesktop")
+//files.printResult("files", "/Users/KSJ/Desktop/swift/masters-cocoa/week4wed", "example")
 
+print(codesquad.squadArr)
+print(codesquad.findBy(name: "JK"))
+print(codesquad.removeBy(email: "crong@codesquad.kr"))
+codesquad.write(to: "export.csv")
