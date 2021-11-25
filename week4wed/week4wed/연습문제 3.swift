@@ -20,8 +20,7 @@ class WordFinder {
     func thread() {
         for i in wordArr{
             let thread = Thread{
-                    print("\(i) = \(self.textToArr.filter{$0.contains(i)}.count) times in this text")
-                    print(Thread.current)
+                print("\(i) = \(self.textToArr.filter{$0.contains(i)}.count) times in this text")
             }
             thread.start()
         }
