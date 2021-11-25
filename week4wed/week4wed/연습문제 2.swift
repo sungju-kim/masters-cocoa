@@ -89,9 +89,4 @@ class CodeSquad{
         }
     }
 }
-
-
-
-
-
 let codesquad = CodeSquad(filename: "/Users/KSJ/Desktop/swift/masters-cocoa/week4wed/example.csv")
